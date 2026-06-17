@@ -14,8 +14,8 @@ export function Sidebar({ userRole = "admin" }: SidebarProps) {
   return (
     <aside className="sidebar-menu">
       <div className="sidebar-header">
-        <h2>HMS</h2>
-        <p>Hospital Management</p>
+        <h2>HealthHub</h2>
+        <p>Medical Management Platform</p>
       </div>
 
       <nav className="menu">
