@@ -39,7 +39,7 @@ export function ErrorBoundary() {
             <h1 className="error-code">{status}</h1>
             <h2 className="error-message">{message}</h2>
             <p className="error-description">
-              {status === 404 
+              {status === 404
                 ? "The page you're looking for doesn't exist."
                 : "Something went wrong. Please try again later."}
             </p>
