@@ -1,24 +1,22 @@
-Run with MongoDB (local)
+Bootstrap & run (automated)
 
-1. Start MongoDB with Docker (recommended):
-   docker-compose up -d
+1. Ensure Docker is installed and running.
 
-2. Copy .env.example to .env and adjust if needed:
-   cp .env.example .env
+2. From the repo root run (one-liner):
+   npm run bootstrap
 
-3. Seed the database (requires node):
-   node scripts/seed.js
+   - This starts MongoDB via docker-compose, installs dependencies, and seeds the DB.
+   - To avoid starting the dev server in PowerShell: pwsh scripts\bootstrap.ps1 -NoDev
+   - For POSIX shells: bash scripts/bootstrap.sh
 
-4. Install and run Remix app:
-   npm install
+3. Start dev server:
    npm run dev
 
-5. Open the app: http://localhost:3000 (or the Remix port shown)
+4. Open http://localhost:3000
 
 Using MongoDB Compass:
-- Connect to mongodb://localhost:27017
-- Select or create database 'hms'
+- Connect to: mongodb://localhost:27017
+- Database: hms
 - Collections: patients, doctors, appointments, staff, invoices
 
-Notes:
-- For production, use a managed MongoDB and secure credentials. Do not commit .env with secrets to git.
+Security note: keep .env out of version control; use a managed DB for production.
