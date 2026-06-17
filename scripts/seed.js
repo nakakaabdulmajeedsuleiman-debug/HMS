@@ -11,6 +11,7 @@ async function seedDatabase() {
 
     const db = client.db("hms");
 
+    // Drop existing collections if they exist
     for (const collectionName of [
       "patients",
       "doctors",
