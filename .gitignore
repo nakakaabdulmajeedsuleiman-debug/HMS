@@ -1,0 +1,1 @@
+node_modules/\n.build/\n.build\n/.cache\n/dist\n/public/build\n.env\n.env.local\n.DS_Store\nnpm-debug.log\nyarn-error.log\ncoverage/\n

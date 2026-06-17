@@ -1,12 +1,1 @@
-version: '3.8'
-services:
-  mongodb:
-    image: mongo:6.0
-    restart: unless-stopped
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-
-volumes:
-  mongo-data:
+version: '3.8'\nservices:\n  mongodb:\n    image: mongo:6.0\n    restart: unless-stopped\n    ports:\n      - \"27017:27017\"\n    volumes:\n      - mongo-data:/data/db\n\nvolumes:\n  mongo-data:\n
