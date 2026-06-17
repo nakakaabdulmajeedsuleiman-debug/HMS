@@ -1,22 +1,28 @@
-import React, { PropsWithChildren } from "react";
-import Sidebar from "./Sidebar";
+import { Sidebar } from "./Sidebar";
 
-export default function Layout({ children }: PropsWithChildren<{}>) {
+interface LayoutProps {
+  children: React.ReactNode;
+  userRole?: string;
+  title?: string;
+}
+
+export function Layout({ children, userRole, title }: LayoutProps) {
   return (
-    <div className="app-root">
-      <header className="site-header">
-        <div className="site-brand-copy">
-          <h1>🏥 Muslim Specialist Hospital Zaria</h1>
-          <p className="sub">Hospital Management System</p>
-        </div>
-      </header>
-      <div className="dashboard-container">
-        <aside className="sidebar">
-          <Sidebar />
-        </aside>
-        <main className="main-content">{children}</main>
-      </div>
-      <footer className="footer">© 2026 Muslim Specialist Hospital Zaria. All rights reserved.</footer>
+    <div className="dashboard-container">
+      <Sidebar userRole={userRole} />
+      <main className="main-content">
+        <header className="top-bar">
+          <div className="header-left">
+            {title && <h1 className="page-title">{title}</h1>}
+          </div>
+          <div className="header-right">
+            <span className="user-info">
+              Role: <strong>{userRole || "user"}</strong>
+            </span>
+          </div>
+        </header>
+        <div className="content-wrapper">{children}</div>
+      </main>
     </div>
   );
 }
